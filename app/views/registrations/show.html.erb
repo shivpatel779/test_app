@@ -1,0 +1,49 @@
+<div style="margin: 0 auto;width:500px;">
+  <% if @user_detail.present? %>
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Name:
+          <%= @user_detail.name %>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <label>Age:
+          <%= @user_detail.age %>
+        </label>
+      </div>
+      <div class="large-4 columns">
+        <label>Date of birth:
+          <%= @user_detail.dob %>
+        </label>
+      </div>
+      <div class="large-4 columns">
+        <label>Location:
+          <%= @user_detail.location %>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Gender: <%= @user_detail.gender %></label>
+      </div>
+      <div class="large-6 columns">
+        <label>Availability: <%= @user_detail.availability ? "Yes" : "No" %></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <label>
+          <%= image_tag @user_detail.image.url(:medium) %>
+        </label>
+      </div>
+      <div class="large-4 columns">
+      </div>
+      <div class="large-4 columns">
+      </div>
+    </div>
+  <% else %>
+    No Record Found....
+  <% end %>
+</div>

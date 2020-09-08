@@ -1,0 +1,52 @@
+<%= form_with model: @user_detail, url: registrations_path, method: :post, local: true, html: { style: 'margin: 0 auto;width:500px;' }  do |f| %>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Name
+        <%= f.text_field :name, placeholder: "Name" %>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Age
+        <%= f.text_field :age, placeholder: "Age" %>
+      </label>
+    </div>
+    <div class="large-4 columns">
+      <label>Date of birth
+        <%= f.date_field :dob, placeholder: "Date of birth" %>
+      </label>
+    </div>
+    <div class="large-4 columns">
+      <label>Location
+        <%= f.text_field :location, placeholder: "Location" %>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Gender</label>
+      <%= f.radio_button :gender, "Male", checked: true %><label for="pokemonRed">Male</label>
+      <%= f.radio_button :gender, "Female" %><label for="pokemonRed">Female</label>
+    </div>
+    <div class="large-6 columns">
+      <label>Availability</label>
+      <%= f.check_box :availability %><label for="checkbox1">Availability</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Image Upload
+        <%= f.file_field :image, accept: '.png, .jpeg, .jpg, .gif, .tiff, .bmp' %>
+      </label>
+    </div>
+    <div class="large-4 columns">
+      <label>File Upload
+        <%= f.file_field :file_attachment, accept: '.csv, .xlsx' %>
+      </label>
+    </div>
+    <div class="large-4 columns">
+    </div>
+  </div>
+  <%= f.submit "Submit", class: 'button' %>
+<% end %>
