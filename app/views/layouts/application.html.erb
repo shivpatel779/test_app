@@ -19,7 +19,9 @@
         <div class="top-bar-left">
           <ul class="menu">
             <li><%= link_to "Home", new_registration_path %></li>
-            <li><%= link_to "Show last record", registration_path(UserDetail.all.last)%></li>
+            <% if UserDetail.all.last.present? %>
+              <li><%= link_to "Show last record", registration_path(UserDetail.all.last)%></li>
+            <% end %>
           </ul>
         </div>
       </div>
